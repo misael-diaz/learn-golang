@@ -13,6 +13,14 @@ func main() {
 	}
 	r := csv.NewReader(file);
 	records, err := r.ReadAll();
-	fmt.Println(records);
+	if (nil != err) {
+		log.Fatal(err);
+	}
+	nproblems := 0;
+	for _, ln := range records {
+		fmt.Println(ln);
+		nproblems++;
+	}
+	fmt.Println(nproblems);
 	file.Close();
 }
