@@ -16,10 +16,9 @@ func main() {
 	if (nil != err) {
 		log.Fatal(err);
 	}
-	nproblems := 0;
+	nproblems := len(records);
 	for _, ln := range records {
 		fmt.Println(ln);
-		nproblems++;
 	}
 	fmt.Println(nproblems);
 	file.Close();
